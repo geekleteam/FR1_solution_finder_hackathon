@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "web-client",
+      "type": "service",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "data": {
+        "icon": "ðŸ’»",
+        "label": "Web Client"
+      }
+    },
+    {
+      "id": "mobile-client",
+      "type": "service",
+      "position": {
+        "x": 100,
+        "y": 300
+      },
+      "data": {
+        "icon": "ðŸ“±",
+        "label": "Mobile Client"
+      }
+    },
+    {
+      "id": "api-gateway",
+      "type": "service",
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "data": {
+        "icon": "ðŸŒ",
+        "label": "API Gateway"
+      }
+    },
+    {
+      "id": "order-service",
+      "type": "service",
+      "position": {
+        "x": 700,
+        "y": 100
+      },
+      "data": {
+        "icon": "ðŸ•",
+        "label": "Order Service"
+      }
+    },
+    {
+      "id": "payment-service",
+      "type": "service",
+      "position": {
+        "x": 700,
+        "y": 300
+      },
+      "data": {
+        "icon": "ðŸ’³",
+        "label": "Payment Service"
+      }
+    },
+    {
+      "id": "order-db",
+      "type": "service",
+      "position": {
+        "x": 1000,
+        "y": 100
+      },
+      "data": {
+        "icon": "ðŸ—„ï¸",
+        "label": "Order Database"
+      }
+    },
+    {
+      "id": "payment-db",
+      "type": "service",
+      "position": {
+        "x": 1000,
+        "y": 300
+      },
+      "data": {
+        "icon": "ðŸ—„ï¸",
+        "label": "Payment Database"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "web-client->api-gateway",
+      "source": "web-client",
+      "target": "api-gateway"
+    },
+    {
+      "id": "mobile-client->api-gateway",
+      "source": "mobile-client",
+      "target": "api-gateway"
+    },
+    {
+      "id": "api-gateway->order-service",
+      "source": "api-gateway",
+      "target": "order-service"
+    },
+    {
+      "id": "api-gateway->payment-service",
+      "source": "api-gateway",
+      "target": "payment-service"
+    },
+    {
+      "id": "order-service->order-db",
+      "source": "order-service",
+      "target": "order-db"
+    },
+    {
+      "id": "payment-service->payment-db",
+      "source": "payment-service",
+      "target": "payment-db"
+    }
+  ]
+}
